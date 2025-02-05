@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🔥 Aquí van tus estilos personalizados 🔥 */
+
+/* 🔹 Ocultar el botón hamburguesa en PC */
+.menu-btn {
+  display: none;
+}
+
+/* 🔹 Estilos para móviles */
+@media (max-width: 768px) {
+  /* 🔹 Ajustar el botón hamburguesa */
+  .menu-btn {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    z-index: 1001;
+  }
+
+  /* 🔹 Asegurar que el menú esté oculto en móviles */
+  #menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(155, 44, 97, 0.95);
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+  }
+
+  /* 🔹 Mostrar el menú cuando esté activo */
+  #menu.active {
+    display: flex;
+  }
+
+  /* 🔹 Ajustar los elementos del menú */
+  #menu li {
+    padding: 12px 0;
+  }
+
+  /* 🔹 Ajustar imágenes responsivas */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* 🔹 Ajustar títulos y textos en móviles */
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  /* 🔹 Ajustar botones */
+  a, button {
+    padding: 10px 14px;
+    font-size: 1rem;
+    width: auto;
+  }
+
+  /* 🔹 Espaciado general en la sección de bienvenida */
+  #inicio {
+    padding: 25px;
+    text-align: center;
+  }
+
+  /* 🔹 Asegurar que la imagen de fondo no sea muy grande */
+  body {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* 🔹 Ajustar la separación SOLO en "Servicios" y "Portafolio" */
+#servicios, #portafolio {
+  padding-bottom: 120px;
+  margin-bottom: 500px;
+}
+
+/* 🔹 Animación de brillo para el botón hamburguesa y el título */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #9B2C61, 0 0 10px #9B2C61;
+  }
+  50% {
+    text-shadow: 0 0 15px #9B2C61, 0 0 30px #9B2C61;
+  }
+  100% {
+    text-shadow: 0 0 5px #9B2C61, 0 0 10px #9B2C61;
+  }
+}
+
+/* 🔹 Aplicar la animación al botón hamburguesa */
+.menu-btn {
+  animation: glow 1.5s infinite alternate;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 🔥 Aplicar la animación de brillo al título "Mis Servicios" */
+.glow-text {
+  animation: glow 1.5s infinite alternate;
+}
+
+/* 🔹 Ajustar el contenido para que no se corte por el header */
+body {
+  padding-top: 80px;
+}
+
+/* 🔥 Animación de subrayado */
+@keyframes underline-animate {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.underline-text {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 3px;
+  background-color: #9B2C61;
+  animation: underline-animate 2s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
